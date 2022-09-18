@@ -11,15 +11,9 @@ let todos = [
 let collection = new TodoCollection("Jorge", todos);
 
 console.clear();
-console.log(`${collection.userName}'s todo list`);
+console.log(`${collection.userName}'s todo list ` + `(${ collection.getITemCounts().incomplete } items to do)`);
 
+//collection.removeComplete();
 collection.getTodoItems(true).forEach(
     item => item.printDetails()
 );
-
-//let newId = collection.addTodo("Clean the house");
-//let todoItem = collection.getTodoById(newId);
-//todoItem.printDetails();
-//collection.addTodo(todoItem);
-
-//console.log(JSON.stringify(todoItem));
