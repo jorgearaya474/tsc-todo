@@ -87,6 +87,10 @@ function promptUser(): void {
             case Commands.Complete:
                 (collection.getITemCounts().incomplete > 0) ? promptComplete() : promptUser();
                 break;
+            case Commands.Purge:
+                collection.removeComplete();
+                promptUser();
+                break;
         }
     })
 }
